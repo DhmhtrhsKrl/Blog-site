@@ -1,0 +1,31 @@
+<%- include("partials/header.ejs") %>
+
+<%if(locals.title){%>
+    <h1> <%= title %> </h1>
+    <p>  <%= body %> </p>
+<%}%>
+
+<div class="row">
+    <div class="col">
+        <!-- update button -->
+        <form action="/update" method="post">
+            <input type="hidden" name="id" value="<%= ar_id%>"> <!-- Assuming article ID is 1 -->
+            <button type="submit">Update</button>
+        </form>
+    </div>
+    <div class="col">
+        <!-- Delete button -->
+        <form action="/delete" method="post">
+            <input type="hidden" name="id" value="<%= ar_id%>"> <!-- Assuming article ID is 1 -->
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+<%- include("partials/footer.ejs") %>
